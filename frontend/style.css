@@ -1,0 +1,186 @@
+   * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffe6f0;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+.app {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+form input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 12px 20px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #e0559e;
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+#toggle-mode {
+  background: #333;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  padding: 1rem;
+  border-radius: 15px;
+  color: #222;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+}
+
+.note-card button.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark-mode .app {
+  background: #2b2b2b;
+}
+
+body.dark-mode form input[type="text"] {
+  background: #444;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark-mode .note-card {
+  color: #eee;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+.note-card {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.important-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.note-card.important {
+  border: 2px solid gold;
+  box-shadow: 0 0 10px gold;
+}
+.timestamp {
+  display: block;
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+body.dark-mode .timestamp {
+  color: #bbb;
+}
+@keyframes fadeInNote {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate background gradient */
+body {
+  background: linear-gradient(270deg, #ffe6f0, #ffd3b6, #a8e6cf, #ffaaa5);
+  background-size: 800% 800%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

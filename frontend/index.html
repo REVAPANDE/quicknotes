@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickNotes 📝</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="mode-toggle">
+        <button id="toggle-mode">🌙 Dark Mode</button>
+      </div>
+      <h1>QuickNotes 📝</h1>
+    </header>
+    
+    <main>
+      <form id="note-form">
+        <input type="text" id="note-input" placeholder="Write a quick note..." />
+        <button type="submit">Add Note</button>
+      </form>
+      <div id="notes-container" class="notes-grid"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
